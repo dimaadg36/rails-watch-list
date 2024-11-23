@@ -1,0 +1,12 @@
+<h1>My Lists</h1>
+<%= link_to "Create new list", new_list_path %>
+<div class="lists">
+  <% @lists.each do |list| %>
+    <div class="list-card">
+      <%= link_to list_path(list) do %>
+        <h2><%= list.name %></h2>
+        <p><%= list.movies.count %> movies</p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
